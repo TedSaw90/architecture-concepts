@@ -11,5 +11,6 @@
 
     <modules>
         <module>bff-basic</module>
+        <module>bff-basic-with-tenants</module>
     </modules>
 </project>
