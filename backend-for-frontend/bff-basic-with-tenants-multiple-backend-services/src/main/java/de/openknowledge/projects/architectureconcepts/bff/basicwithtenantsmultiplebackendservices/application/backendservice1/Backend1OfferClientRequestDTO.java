@@ -13,27 +13,11 @@
  * See the License for the specific language governing permissions
  * and limitations under the License.
  */
-package de.openknowledge.projects.architectureconcepts.bff.basicwithtenants.infrastructure.tenant;
-
-import org.apache.commons.lang3.Validate;
+package de.openknowledge.projects.architectureconcepts.bff.basicwithtenantsmultiplebackendservices.application.backendservice1;
 
 /**
- * A DTO that provides a tenant.
+ * A DTO that represents a request for an offer.
  */
-public class TenantDTO {
+public class Backend1OfferClientRequestDTO {
 
-  private TenantType tenantType;
-
-  public TenantDTO() {
-    super();
-  }
-
-  public TenantDTO(TenantType tenantType) {
-    this();
-    this.tenantType = Validate.notNull(tenantType, "tenantType must not be null");
-  }
-
-  public TenantType getTenantType() {
-    return tenantType;
-  }
 }

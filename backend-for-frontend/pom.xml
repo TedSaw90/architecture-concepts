@@ -12,5 +12,6 @@
     <modules>
         <module>bff-basic</module>
         <module>bff-basic-with-tenants</module>
+        <module>bff-basic-with-tenants-multiple-backend-services</module>
     </modules>
 </project>
