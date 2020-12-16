@@ -8,4 +8,8 @@
     <artifactId>backend-for-frontend</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+    <modules>
+        <module>bff-basic</module>
+    </modules>
 </project>
