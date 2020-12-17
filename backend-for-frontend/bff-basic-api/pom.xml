@@ -5,6 +5,7 @@
 
     <artifactId>bff-basic-api</artifactId>
     <version>0</version>
+    <packaging>pom</packaging>
 
     <parent>
         <artifactId>backend-for-frontend</artifactId>
