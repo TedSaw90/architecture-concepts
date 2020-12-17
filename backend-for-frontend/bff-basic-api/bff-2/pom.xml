@@ -218,6 +218,19 @@
     </build>
 
     <dependencies>
+        <!-- Offer API -->
+        <dependency>
+            <groupId>de.openknowledge.projects.architecture-concepts.backend-for-frontend</groupId>
+            <artifactId>offer-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+        <!-- Offer Impl -->
+        <dependency>
+            <groupId>de.openknowledge.projects.architecture-concepts.backend-for-frontend</groupId>
+            <artifactId>offer-api-impl</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
         <!-- Jakarta EE -->
         <dependency>
             <groupId>jakarta.platform</groupId>

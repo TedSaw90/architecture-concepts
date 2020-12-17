@@ -1,8 +1,13 @@
 package de.openknowledge.projects.architectureconcepts.bff.basic.api.application.offer;
 
+import de.openknowledge.projects.architectureconcepts.bff.basic.api.interfaces.VehicleInsuranceOfferService;
+import de.openknowledge.projects.architectureconcepts.bff.basic.api.interfaces.model.OfferServiceRequestDTO;
+import de.openknowledge.projects.architectureconcepts.bff.basic.api.interfaces.model.OfferServiceResponseDTO;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import javax.inject.Inject;
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.core.Response;
@@ -15,15 +20,21 @@ public class VehicleInsuranceOfferResource {
 
   private static final Logger LOGGER = LoggerFactory.getLogger(VehicleInsuranceOfferResource.class);
 
+  @Inject
+  VehicleInsuranceOfferService offerService;
+
   @POST
-  public Response tariff(final OfferRequestDTO offerRequest) {
+  public Response tariff(final OfferRequestDTO offerRequestDTO) {
     LOGGER.info("Tariff vehicle insurance offer");
-    //todo use api from other module
+    OfferServiceRequestDTO offerServiceRequestDTO = mapOfferRequest(offerRequestDTO);
+    OfferServiceResponseDTO offerServiceResponseDTO = offerService.tariff(offerServiceRequestDTO);
     LOGGER.info("Offer created");
+    // What if ServiceResponse doesn't match FE Response? todo Another Mapping is needed.
+    return Response.status(Response.Status.CREATED).entity(offerServiceResponseDTO).build();
+  }
 
-    return Response.status(Response.Status.CREATED).build();
-
-    //todo use response from api
-    //return Response.status(Response.Status.CREATED).entity(offerResponse).build();
+  private OfferServiceRequestDTO mapOfferRequest(final OfferRequestDTO offerRequestDTO) {
+    //todo map FE DTO to API DTO
+    return new OfferServiceRequestDTO();
   }
 }
